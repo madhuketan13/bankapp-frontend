@@ -1,0 +1,71 @@
+<section class="container">
+    <h1 class="large text-primary">Create Your Account</h1>
+    <p class="lead">
+      <i class="fas fa-user"></i> Let's get some information to create your account
+    </p>
+    <small>* = required field</small>
+    <form class="form" (ngSubmit)="createAccount()">
+      <div class="form-group">
+        <label for="accountStatus">Account Status</label>
+        <input
+          type="text"
+          id="accountStatus"
+          name="accountStatus"
+          [(ngModel)]="account.accountStatus"
+          placeholder="Account Status"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="accountType">Account Type</label>
+        <select name="accountType" id="accountType" [(ngModel)]="account.accountType"> 
+          <option value="SAVINGS">Savings</option>
+          <option value="CURRENT">Current</option>
+          <option value="FIXED_DEPOSIT">Fixed Deposit</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="accountBalance">Account Balance</label>
+        <input
+          type="number"
+          id="accountBalance"
+          name="accountBalance"
+          placeholder="Account Balance"
+          [(ngModel)]="account.accountBalance"
+        />
+      </div>
+      <div class="form-group">
+        <label for="pancardNumber">PAN Card Number</label>
+        <input
+          type="text"
+          id="pancardNumber"
+          name="pancardNumber"
+          placeholder="PAN Card Number"
+          [(ngModel)]="account.pancardNumber"
+        />
+      </div>
+      <div class="form-group">
+        <label for="aadharcardNumber">Aadhar Card Number</label>
+        <input
+          type="text"
+          id="aadharcardNumber"
+          name="aadharcardNumber"
+          placeholder="Aadhar Card Number"
+          [(ngModel)]="account.aadharcardNumber"
+        />
+      </div>
+      <div class="form-group">
+        <label for="createDateTime">Create Date & Time</label>
+        <input
+          type="text"
+          id="createDateTime"
+          name="createDateTime"
+          placeholder="Create Date & Time"
+          [(ngModel)]="account.createDateTime"
+        />
+      </div>
+      <input type="submit" class="btn btn-primary my-1" />
+      <a class="btn btn-light my-1" href="dashboard.html">Go Back</a>
+    </form>
+  </section>
+  

@@ -1,0 +1,22 @@
+<section class="container">
+    <h1 class="large text-primary">Make a Withdrawal</h1>
+    <p class="lead">
+      <i class="fas fa-money-check"></i> Enter the withdrawal amount
+    </p>
+    <form class="form" (ngSubmit)="onWithdrawal()">
+      <div class="form-group">
+        <label for="withdrawalAmount">Withdrawal Amount *</label>
+        <input
+          type="number"
+          id="withdrawalAmount"
+          name="withdrawalAmount"
+          placeholder="Enter Withdrawal Amount"
+          [(ngModel)]="withdraw.amount"
+          required
+        />
+      </div>
+      <input type="submit" class="btn btn-primary my-1" value="Withdraw" />
+      <a class="btn btn-light my-1" href="dashboard.html">Go Back</a>
+    </form>
+  </section>
+  

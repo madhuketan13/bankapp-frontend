@@ -1,0 +1,31 @@
+<section class="container">
+    <h1 class="large text-primary">Dashboard</h1>
+    <p class="lead">
+      <i class="fas fa-user"></i> Welcome {{userDetails.username}}
+    </p>
+  
+    <div *ngIf="flag">
+      <app-dashboard-createaccount></app-dashboard-createaccount>
+    </div>
+  
+    <div *ngIf="!flag">
+
+      <div class="account-balance">
+        <h3>Account Balance: {{ account.accountBalance | currency: 'INR' : 'symbol' }}</h3>
+      </div>
+
+      <app-dashboard-action></app-dashboard-action>
+
+      <app-dashboard-loans>
+        [loan] = "account.loan"
+      </app-dashboard-loans>
+      
+      <div class="my-2">
+        <button class="btn btn-danger">
+          <i class="fas fa-user-minus"></i>
+          Delete My Account
+        </button>
+      </div>
+    </div>
+  </section>
+  

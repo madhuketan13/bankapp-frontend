@@ -1,0 +1,62 @@
+<section class="container">
+    <h1 class="large text-primary">Account Details</h1>
+    <p class="lead">
+      <i class="fas fa-user"></i> View your account details
+    </p>
+    <form class="form">
+      <div class="form-group">
+        <label for="accountStatus">Account Status</label>
+        <input
+            type="text"
+            id="accountStatus"
+            name="accountStatus"
+            [value]="accountDetails?.accountStatus"
+            placeholder="Account Status"
+            readonly
+        />
+      </div>
+      <div class="form-group">
+        <label for="accountType">Account Type</label>
+          <input
+          type="text"
+          id="accountType"
+          name="accountType"
+          [value]="accountDetails?.accountType"
+          placeholder="Account Type"
+          readonly
+      />
+      </div>
+      <div class="form-group">
+        <label for="accountBalance">Account Balance</label>
+        <input
+          type="number"
+          id="accountBalance"
+          name="accountBalance"
+          [value]="accountDetails.accountBalance"
+          placeholder="Account Balance"
+          readonly
+        />
+      </div>
+      <div class="form-group">
+        <label for="pancardNumber">PAN Card Number</label>
+        <input
+          type="text"
+          id="pancardNumber"
+          name="pancardNumber"
+          [value]="accountDetails.pancardNumber"
+          placeholder="PAN Card Number"
+        />
+      </div>
+      <div class="form-group">
+        <label for="aadharcardNumber">Aadhar Card Number</label>
+        <input
+          type="text"
+          id="aadharcardNumber"
+          name="aadharcardNumber"
+          [value]="accountDetails.aadharcardNumber"
+          placeholder="Aadhar Card Number"
+        />
+      </div>
+      <button class="btn btn-light my-1" (click)="goBack()">Go Back</button>
+    </form>
+</section>

@@ -1,0 +1,50 @@
+<section class="container">
+    <h1 class="large text-primary">Apply for a Loan</h1>
+    <p class="lead">
+      <i class="fas fa-file-alt"></i> Fill in the loan application details
+    </p>
+    <form class="form" (ngSubmit)="onLoanApplication()">
+      <div class="form-group">
+        <label for="loanType">Loan Type *</label>
+        <select name="loanType" id="loanType" [(ngModel)]="loan.loanType"required>
+          <option value="HOME">Home Loan</option>
+          <option value="CREDIT">Credit</option>
+          <option value="PERSONAL">Personal Loan</option>
+          <!-- Add other loan types as needed -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="loanAmount">Loan Amount *</label>
+        <input
+          type="number"
+          id="loanAmount"
+          name="loanAmount"
+          placeholder="Enter Loan Amount"
+          [(ngModel)]="loan.loanAmount"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="loanStatus">Loan Status</label>
+        <select name="loanStatus" id="loanStatus" [(ngModel)]="loan.loanStatus">
+          <option value="PENDING">Pending</option>
+          <option value="APPROVED">Approved</option>
+          <option value="REJECTED">Rejected</option>
+          <!-- Add other loan statuses as needed -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="appliedDate">Applied Date</label>
+        <input
+          type="date"
+          id="appliedDate"
+          name="appliedDate"
+          [(ngModel)]="loan.appliedDate"
+          placeholder="Select Applied Date"
+        />
+      </div>
+      <input type="submit" class="btn btn-primary my-1" value="Submit Application" />
+      <a class="btn btn-light my-1" href="dashboard.html">Go Back</a>
+    </form>
+  </section>
+  
