@@ -17,6 +17,7 @@ export class AccountService {
   constructor(private httpClient: HttpClient) {}
 
   endPoint: String = 'api/account';
+  accountDetails: any;
 
   getAccount(userId: number): Observable<any> {
     return this.httpClient.get(this.endPoint + '/getAccount/' + userId);
@@ -29,6 +30,11 @@ export class AccountService {
         account,
         headerData
     )
+  }
+
+  updateAccount(account: IAccount): Observable<any>{
+    this.accountDetails = JSON.parse(localStorage.getItem('accountDetails') || '');
+    return this.httpClient.put(`${this.endPoint}/update/${this.accountDetails.accountId}`, account);
   }
 
   deposit(deposit: IDeposit): Observable<any>{

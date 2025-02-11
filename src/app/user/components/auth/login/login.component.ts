@@ -21,7 +21,13 @@ export class LoginComponent implements OnInit {
         console.log(JSON.stringify(res));
         localStorage.setItem('userDetails', JSON.stringify(res));
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/dashboard']);
+        const roles = res.roles;
+        if(roles.includes('ROLE_ADMIN')){
+          this.router.navigate(['/admin']);
+        }
+        else{
+          this.router.navigate(['/dashboard']);
+        }
       },
       (err: any) => console.log(err)
     );

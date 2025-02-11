@@ -1,0 +1,30 @@
+<section class="container">
+    <h1 class="large text-primary">Admin Dashboard</h1>
+    <p class="lead"><i class="fas fa-user-shield"></i> Manage All Loans</p>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Loan ID</th>
+          <th>Loan Amount</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let loan of loans">
+          <td>{{ loan.loanId }}</td>
+          <td>{{ loan.loanAmount | currency: 'INR' : 'symbol' }}</td>
+          <td>{{ loan.loanStatus }}</td>
+          <td>
+            <button class="btn btn-success" (click)="approveLoan(loan.id)" [disabled]="loan.status === 'Approved'">
+              Approve
+            </button>
+            <button class="btn btn-danger" (click)="rejectLoan(loan.id)" [disabled]="loan.status === 'Rejected'">
+              Reject
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>

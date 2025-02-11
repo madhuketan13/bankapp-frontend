@@ -8,13 +8,15 @@ import { CreateAccountComponent } from './components/account-forms/create-accoun
 import { httpInterceptors } from '../shared/interceptors';
 import { AccountService } from './services/account.service';
 import { HttpClientModule } from '@angular/common/http';
+import { EditAccountComponent } from './components/account-forms/edit-account/edit-account.component';
 
 
 @NgModule({
   declarations: [
     WithdrawComponent,
     DepositComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    EditAccountComponent
   ],
   imports: [
     CommonModule,

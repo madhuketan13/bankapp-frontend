@@ -3,28 +3,28 @@
     <p class="lead">
       <i class="fas fa-user"></i> View your account details
     </p>
-    <form class="form">
+    <form class="form" (ngSubmit)="updateAccount()">
       <div class="form-group">
         <label for="accountStatus">Account Status</label>
         <input
             type="text"
             id="accountStatus"
             name="accountStatus"
-            [value]="accountDetails?.accountStatus"
+            [(ngModel)]="accountDetails.accountStatus"
             placeholder="Account Status"
             readonly
         />
       </div>
       <div class="form-group">
         <label for="accountType">Account Type</label>
-          <input
+        <input
           type="text"
           id="accountType"
           name="accountType"
-          [value]="accountDetails?.accountType"
+          [(ngModel)]="accountDetails.accountType"
           placeholder="Account Type"
           readonly
-      />
+        />
       </div>
       <div class="form-group">
         <label for="accountBalance">Account Balance</label>
@@ -32,7 +32,7 @@
           type="number"
           id="accountBalance"
           name="accountBalance"
-          [value]="accountDetails.accountBalance"
+          [(ngModel)]="accountDetails.accountBalance"
           placeholder="Account Balance"
           readonly
         />
@@ -43,7 +43,7 @@
           type="text"
           id="pancardNumber"
           name="pancardNumber"
-          [value]="accountDetails.pancardNumber"
+          [(ngModel)]="accountDetails.pancardNumber"
           placeholder="PAN Card Number"
         />
       </div>
@@ -53,10 +53,11 @@
           type="text"
           id="aadharcardNumber"
           name="aadharcardNumber"
-          [value]="accountDetails.aadharcardNumber"
+          [(ngModel)]="accountDetails.aadharcardNumber"
           placeholder="Aadhar Card Number"
         />
       </div>
-      <button class="btn btn-light my-1" (click)="goBack()">Go Back</button>
+      <button class="btn btn-primary my-1" type="submit">Update Account</button>
+      <button class="btn btn-light my-1" type="button" (click)="goBack()">Go Back</button>
     </form>
 </section>
