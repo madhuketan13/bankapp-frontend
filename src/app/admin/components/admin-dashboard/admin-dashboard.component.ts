@@ -27,28 +27,16 @@ export class AdminDashboardComponent implements OnInit {
     );
   }
 
-  approveLoan(loanId: number): void {
-    // this.adminService.approveLoan(loanId).subscribe(
-    //   () => {
-    //     alert('Loan approved successfully');
-    //     this.getAllLoans(); // Refresh the list
-    //   },
-    //   (error) => {
-    //     console.error('Error approving loan:', error);
-    //   }
-    // );
-  }
-
-  rejectLoan(loanId: number): void {
-    // this.adminService.rejectLoan(loanId).subscribe(
-    //   () => {
-    //     alert('Loan rejected successfully');
-    //     this.getAllLoans(); // Refresh the list
-    //   },
-    //   (error) => {
-    //     console.error('Error rejecting loan:', error);
-    //   }
-    // );
+  updateLoanStatus(loanId: string, status: string): void {
+    this.adminService.updateLoanStatus(loanId, status).subscribe(
+      (res) => {
+        console.log(res);
+        this.getAllLoans();
+      },
+      (error) => {
+        console.error(`Error updating loan status to ${status}:`, error);
+      }
+    );
   }
 
 }

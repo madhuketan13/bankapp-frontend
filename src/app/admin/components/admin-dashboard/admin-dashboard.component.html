@@ -17,10 +17,10 @@
           <td>{{ loan.loanAmount | currency: 'INR' : 'symbol' }}</td>
           <td>{{ loan.loanStatus }}</td>
           <td>
-            <button class="btn btn-success" (click)="approveLoan(loan.id)" [disabled]="loan.status === 'Approved'">
+            <button class="btn btn-success" (click)="updateLoanStatus(loan.loanId,'APPROVED')" [disabled]="loan.status === 'Approved'">
               Approve
             </button>
-            <button class="btn btn-danger" (click)="rejectLoan(loan.id)" [disabled]="loan.status === 'Rejected'">
+            <button class="btn btn-danger" (click)="updateLoanStatus(loan.loanId,'DENIED')" [disabled]="loan.status === 'Rejected'">
               Reject
             </button>
           </td>

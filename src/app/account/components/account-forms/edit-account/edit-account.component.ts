@@ -15,7 +15,7 @@ export class EditAccountComponent implements OnInit{
   constructor(private router: Router , private accountService: AccountService) {}
 
   ngOnInit(): void {
-    const storedDetails = localStorage.getItem('accountDetails');
+    const storedDetails = localStorage.getItem('profileDetails');
     if (storedDetails) {
       this.accountDetails = JSON.parse(storedDetails);
       this.populateAccountTypes();

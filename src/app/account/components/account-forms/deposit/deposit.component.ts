@@ -23,7 +23,7 @@ export class DepositComponent implements OnInit {
   }
 
   onDeposit(): void {
-    this.deposit.accountId = JSON.parse(localStorage.getItem('accountDetails') || '').accountId;
+    this.deposit.accountId = JSON.parse(localStorage.getItem('profileDetails') || '').accountId;
     this.accountService.deposit(this.deposit).subscribe((res) => {
       console.log('deposit successful')
       this.router.navigate(['/dashboard']);

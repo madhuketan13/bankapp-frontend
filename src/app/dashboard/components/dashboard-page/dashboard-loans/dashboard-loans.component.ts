@@ -14,7 +14,7 @@ export class DashboardLoansComponent implements OnInit {
 
   constructor(private loanService: LoanService) { }
   ngOnInit(): void {
-    this.accountDetails = JSON.parse(localStorage.getItem('accountDetails') || '');
+    this.accountDetails = JSON.parse(localStorage.getItem('profileDetails') || '');
     this.fetchLoans();
     
   }

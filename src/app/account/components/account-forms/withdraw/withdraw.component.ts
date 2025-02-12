@@ -20,7 +20,7 @@ export class WithdrawComponent implements OnInit {
   }
 
   onWithdrawal() : void {
-    this.withdraw.accountId = JSON.parse(localStorage.getItem('accountDetails') || '').accountId;
+    this.withdraw.accountId = JSON.parse(localStorage.getItem('profileDetails') || '').accountId;
     this.accountService.withdraw(this.withdraw).subscribe((res: any) => {
       console.log('withdraw successful')
       this.router.navigate(['/dashboard']);

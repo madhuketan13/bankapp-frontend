@@ -25,7 +25,7 @@ export class LoanComponent implements OnInit {
 
   onLoanApplication(): void {
 
-    this.loan.accountId = JSON.parse(localStorage.getItem('accountDetails') || "").accountId;
+    this.loan.accountId = JSON.parse(localStorage.getItem('profileDetails') || "").accountId;
 
     if (typeof this.loan.loanType === 'string') {
       this.loan.loanType = [this.loan.loanType];
