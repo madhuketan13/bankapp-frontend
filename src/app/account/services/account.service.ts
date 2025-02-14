@@ -33,7 +33,7 @@ export class AccountService {
   }
 
   updateAccount(account: IAccount): Observable<any>{
-    this.accountDetails = JSON.parse(localStorage.getItem('accountDetails') || '');
+    this.accountDetails = JSON.parse(localStorage.getItem('profileDetails') || '');
     return this.httpClient.put(`${this.endPoint}/update/${this.accountDetails.accountId}`, account);
   }
 
